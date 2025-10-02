@@ -1,0 +1,9 @@
+plugins {
+    id 'java-library'
+}
+
+dependencies {
+    implementation project(':cps-communicator-base')
+
+    implementation 'org.eclipse.emf:org.eclipse.emf.ecore:2.35.0'
+}

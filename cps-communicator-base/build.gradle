@@ -1,0 +1,52 @@
+plugins {
+    id 'java-library'
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+}
+
+repositories {
+    mavenLocal {
+        metadataSources {
+            mavenPom()
+            artifact()
+        }
+    }
+    mavenCentral()
+}
+
+
+dependencies {
+    // https://mvnrepository.com/artifact/commons-cli/commons-cli
+    api 'commons-cli:commons-cli:1.9.0'
+
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core
+    api 'com.fasterxml.jackson.core:jackson-core:2.18.3'
+    api 'com.fasterxml.jackson.core:jackson-databind:2.18.3'
+    api 'com.fasterxml.jackson.core:jackson-annotations:2.18.3'
+    api 'org.eclipse.emfcloud:emfjson-jackson:2.2.0'
+
+    api 'org.eclipse.emf:org.eclipse.emf.common:2.29.0'
+    api 'org.eclipse.emf:org.eclipse.emf.ecore:2.35.0'
+    api 'org.eclipse.emf:org.eclipse.emf.ecore.xmi:2.35.0'
+
+    rootProject.subprojects.each { siblingProject ->
+        // Define projects to exclude explicitly (main itself, and usually the util project)
+        def excludedProjects = ['cps-communicator-base'] // Add other names here if needed
+
+        if (!excludedProjects.contains(siblingProject.name)) {
+            println "[WARN] Automatically adding runtimeOnly dependency on sibling project: ${siblingProject.name}. Ensure this is intended."
+            runtimeOnly project(siblingProject.path) // Add dependency using its path
+        }
+    }
+}
+
+shadowJar {
+    mergeServiceFiles()
+    manifest {
+        attributes 'Main-Class': 'cpscommunicator.base.Main'
+    }
+
+    archiveBaseName.set(rootProject.name)
+    archiveClassifier.set('')
+    destinationDirectory.set(project.rootDir)
+}
