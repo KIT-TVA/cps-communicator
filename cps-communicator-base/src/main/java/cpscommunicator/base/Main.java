@@ -40,7 +40,7 @@ public class Main {
         String[] commandArgs = new String[args.length - 1];
         System.arraycopy(args, 1, commandArgs, 0, args.length - 1);
 
-        if (commandArgs[0].equals("--help") || commandArgs[0].equals("-h") || commandArgs[0].equals("-help") || commandArgs[0].equals("--h")) {
+        if (commandArgs.length > 0 && (commandArgs[0].equals("--help") || commandArgs[0].equals("-h") || commandArgs[0].equals("-help") || commandArgs[0].equals("--h"))) {
             command.printHelp();
         } else {
             command.execute(commandArgs);
