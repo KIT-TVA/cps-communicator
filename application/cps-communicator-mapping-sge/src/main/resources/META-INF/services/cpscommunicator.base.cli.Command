@@ -1,0 +1,4 @@
+cpscommunicator.mapping.sge.cli.BuildSGEStatemachineMapping
+cpscommunicator.mapping.sge.cli.BuildSGEComponentMapping
+cpscommunicator.mapping.sge.cli.ApplyDeltasComponentCommand
+cpscommunicator.mapping.sge.cli.ApplyDeltasStatemachineCommand

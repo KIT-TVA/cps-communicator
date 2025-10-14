@@ -1,0 +1,23 @@
+plugins {
+    id 'java-library'
+}
+
+
+repositories {
+    mavenLocal {
+        metadataSources {
+            mavenPom()
+            artifact()
+        }
+    }
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(':cps-communicator-base')
+    implementation project(':cps-communicator-mapping')
+    implementation project(':application:cps-communicator-variation-sge')
+
+    implementation project(':application:bcs:edu.kit.kastel.tva.bcs.ecorebased.metamodels')
+    implementation project(':application:bcs:edu.kit.kastel.tva.deltavar.core.deltametamodel')
+}
