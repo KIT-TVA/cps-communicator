@@ -1,3 +1,6 @@
 [submodule "application/bcs"]
 	path = application/bcs
 	url = https://github.com/DoVaMo/Legacy.git
+[submodule "application/cps-communicator-variation-sge"]
+	path = application/cps-communicator-variation-sge
+	url = https://github.com/KIT-TVA/sge-metamodel.git
