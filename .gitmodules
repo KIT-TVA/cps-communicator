@@ -1,0 +1,3 @@
+[submodule "application/bcs"]
+	path = application/bcs
+	url = https://github.com/DoVaMo/Legacy.git

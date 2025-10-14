@@ -32,3 +32,92 @@ subprojects {
         implementation 'org.eclipse.emf:org.eclipse.emf.ecore.xmi:2.35.0'
     }
 }
+
+project(':application:bcs:edu.kit.kastel.tva.bcs.ecorebased.metamodels') {
+    dependencies {
+        implementation project(':application:bcs:edu.kit.kastel.tva.deltavar.core.deltametamodel')
+    }
+    sourceSets {
+        main {
+            java {
+                srcDirs = ["src-gen", "src"]
+            }
+        }
+    }
+}
+
+project(':application:bcs:edu.kit.kastel.tva.deltavar.core.deltametamodel') {
+    dependencies {
+        // These are specific to deltametamodel, so they'd go here
+        implementation 'org.eclipse.core:org.eclipse.core.resources:3.7.100'
+
+        implementation project(':application:bcs:de.christophseidl.util.ecore')
+    }
+    sourceSets {
+        main {
+            java {
+                srcDirs = ["src-gen", "src"]
+            }
+        }
+    }
+}
+
+project(':application:bcs:de.christophseidl.util.eclipse') {
+    dependencies {
+        // https://mvnrepository.com/artifact/org.eclipse.jdt/org.eclipse.jdt.core
+        implementation("org.eclipse.jdt:org.eclipse.jdt.core:3.42.0")
+        // https://mvnrepository.com/artifact/org.eclipse.pde/org.eclipse.pde.core
+        implementation("org.eclipse.pde:org.eclipse.pde.core:3.20.200")
+
+        implementation project(':application:bcs:de.christophseidl.util.java')
+    }
+    sourceSets {
+        main {
+            java {
+                srcDirs = ["src-gen", "src"]
+            }
+        }
+    }
+}
+project(':application:bcs:de.christophseidl.util.ecore') {
+    dependencies {
+        // https://mvnrepository.com/artifact/org.eclipse.jdt/org.eclipse.jdt.core
+        implementation("org.eclipse.jdt:org.eclipse.jdt.core:3.42.0")
+
+        // https://mvnrepository.com/artifact/org.eclipse.pde/org.eclipse.pde.core
+        implementation("org.eclipse.pde:org.eclipse.pde.core:3.20.200")
+
+        // https://mvnrepository.com/artifact/org.eclipse.emf/org.eclipse.emf.codegen.ecore
+        implementation("org.eclipse.emf:org.eclipse.emf.codegen.ecore:2.42.0")
+
+        // https://mvnrepository.com/artifact/org.eclipse.emf/org.eclipse.emf.ecore
+        implementation("org.eclipse.emf:org.eclipse.emf.ecore:2.39.0")
+
+        implementation "org.eclipse:org.eclipse.emf.validation:1.8.0.201405281429"
+
+        implementation project(':application:bcs:de.christophseidl.util.eclipse')
+        implementation project(':application:bcs:de.christophseidl.util.java')
+    }
+    sourceSets {
+        main {
+            java {
+                srcDirs = ["src-gen", "src"]
+            }
+        }
+    }
+}
+project(':application:bcs:de.christophseidl.util.java') {
+    dependencies {
+        // https://mvnrepository.com/artifact/org.eclipse.jdt/org.eclipse.jdt.core
+        implementation("org.eclipse.jdt:org.eclipse.jdt.core:3.42.0")
+        // https://mvnrepository.com/artifact/org.eclipse.pde/org.eclipse.pde.core
+        implementation("org.eclipse.pde:org.eclipse.pde.core:3.20.200")
+    }
+    sourceSets {
+        main {
+            java {
+                srcDirs = ["src-gen", "src"]
+            }
+        }
+    }
+}

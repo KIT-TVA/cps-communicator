@@ -1,4 +1,11 @@
 rootProject.name = 'cps-communicator'
 
+include 'application:bcs:edu.kit.kastel.tva.bcs.ecorebased.metamodels'
+include 'application:bcs:edu.kit.kastel.tva.deltavar.core.deltageneration'
+include 'application:bcs:edu.kit.kastel.tva.deltavar.core.deltametamodel'
+include 'application:bcs:de.christophseidl.util.eclipse'
+include 'application:bcs:de.christophseidl.util.ecore'
+include 'application:bcs:de.christophseidl.util.java'
+
 include 'cps-communicator-base'
 include 'cps-communicator-mapping'
