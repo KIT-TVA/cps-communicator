@@ -1,5 +1,6 @@
 rootProject.name = 'cps-communicator'
 
+include 'application:cps-communicator-mapping-sge'
 include 'application:cps-communicator-variation-sge'
 
 include 'application:bcs:edu.kit.kastel.tva.bcs.ecorebased.metamodels'
