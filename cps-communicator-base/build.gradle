@@ -1,7 +1,7 @@
 plugins {
     id 'java-library'
     id 'java'
-    id 'com.github.johnrengelman.shadow' version '8.1.1'
+    id 'com.gradleup.shadow' version "9.4.2"
 }
 
 repositories {
@@ -20,7 +20,7 @@ dependencies {
     api 'commons-cli:commons-cli:1.9.0'
 
     // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core
-    api 'com.fasterxml.jackson.core:jackson-core:2.18.3'
+    api 'com.fasterxml.jackson.core:jackson-core:2.21.1'
     api 'com.fasterxml.jackson.core:jackson-databind:2.18.3'
     api 'com.fasterxml.jackson.core:jackson-annotations:2.18.3'
     api 'org.eclipse.emfcloud:emfjson-jackson:2.2.0'
