@@ -8,7 +8,7 @@ git clone https://github.com/KIT-TVA/cps-communicator.git
 
 2. Install the submodules
 ```shell
-git submodule init
+git submodule update --init --recursive
 ```
 
 ## Build
