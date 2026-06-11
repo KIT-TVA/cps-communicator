@@ -5,13 +5,13 @@ plugins {
 }
 
 repositories {
+    mavenCentral()
     mavenLocal {
         metadataSources {
             mavenPom()
             artifact()
         }
     }
-    mavenCentral()
 }
 
 
